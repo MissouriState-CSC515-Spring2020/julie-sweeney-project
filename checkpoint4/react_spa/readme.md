@@ -1,4 +1,4 @@
-# Checkpoint 3 - Using Routers with React Framework
+# Checkpoint 4 - Conversion to Progressive Web App
 
 `npm run build` builds the application
 
