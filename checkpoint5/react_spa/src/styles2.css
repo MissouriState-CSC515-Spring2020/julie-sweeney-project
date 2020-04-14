@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+
+.familyphoto {
+    float: left;
+    max-height: 500px;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+.carousel-caption{
+    background: none;
+}
+h3 {
+    line-height: 40px;
+    background: rgba(128, 128, 128, 0.6);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: black;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+
+li, a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(73, 73, 73, 1);
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+#famStory {
+    display: block;
+    margin-right: 75px;
+    margin-top: 125px;
+    font-size: 150%;
+    align-items: center;
+    text-align: left;
+}
+
+.logo {
+    cursor: pointer;
+    margin-left: -85px;
+    margin-right: auto;
+    font-size: 500%;
+    font-weight: bold;
+    color: rgb(255, 79, 182);
+    font-family: Harrington, fantasy;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.home {
+    color: rgb(255, 79, 182);
+}
+
+.nav_links li:last-child {
+    margin-right: -85px;
+    color: rgb(255, 79, 182);
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+    color: rgb(73, 73, 73, 0.8);
+}
+
+#myCarousel { 
+    margin: auto;
+    max-width: 600px;
+    align-items: center;
+    justify-content: center;
+}
+
+ol.carousel-indicators {
+    position: absolute;
+    background: none;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+
+
+
+button {
+    margin-right: -100px;
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: rgb(255, 79, 182, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgb(255, 79, 182, 0.8);
+}
+
+.search-bar{
+    margin: 20px;
+    text-align: center;
+}
+
+.search-bar input{
+    width: 75%;
+}
+
+.video-item img{
+    max-width: 64px;
+}
+
+.video-detail .details{
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.list-group-item{
+    cursor: pointer;
+}
+
+.list-group-item:hover{
+    background-color: #eee;
+}
