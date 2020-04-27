@@ -10,6 +10,7 @@ import Parents from "./Parents";
 import About from "./About";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles2.css";
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render((
     <BrowserRouter>
@@ -21,3 +22,5 @@ ReactDOM.render((
     </BrowserRouter>
 
 ), document.getElementById("root"));
+
+serviceWorker.register();
