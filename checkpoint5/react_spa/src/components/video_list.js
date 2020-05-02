@@ -1,13 +1,17 @@
-import React from 'react';
-import VideoListItem from './video_list_item';
+import React, { Suspense, lazy } from "react";
+
+const VideoListItem = lazy(() =>
+import('./video_list_item'));
 
 const VideoList = (props) => {
     const videoItems = props.videos.map((video) => {
         return (
-            <VideoListItem
-                onUserSelected={props.onVideoSelect}
-                key={video.etag}
-                video={video} />
+            <Suspense fallback={<div>Loading...</div>}>
+                <VideoListItem
+                    onUserSelected={props.onVideoSelect}
+                    key={video.etag}
+                    video={video} />
+            </Suspense>
         );
     });
 

@@ -1,12 +1,18 @@
-import React, { Component } from "react";
-import Carousel from 'react-bootstrap/Carousel';
-import SearchBar from './components/search_bar';
-import VideoDetail from './components/video_detail.js';
+import React, { Component, Suspense, lazy } from "react";
 import YTSearch from 'youtube-api-search';
-import VideoList from './components/video_list';
+
 import {
   Link
 } from "react-router-dom";
+
+const SearchBar = lazy(() =>
+import('./components/search_bar'));
+
+const VideoDetail = lazy(() =>
+import('./components/video_detail'));
+
+const VideoList = lazy(() =>
+import('./components.video_list'));
 
 const API_KEY = 'AIzaSyDRe1bfRyW6FvsLkmwd7QsQHaOIJEvQ6tc';
 
@@ -46,119 +52,15 @@ class Parents extends Component{
                         </nav>
                     </header>
                     <div>
-                        <SearchBar onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}/>
-                        <VideoDetail video={this.state.selectedVideo}/>
-                        <VideoList
-                            onVideoSelect={userSelected => this.setState({selectedVideo: userSelected})}
-                            videos={this.state.videos} />
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <SearchBar onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}/>
+                            <VideoDetail video={this.state.selectedVideo}/>
+                            <VideoList
+                                onVideoSelect={userSelected => this.setState({selectedVideo: userSelected})}
+                                videos={this.state.videos} />
+                        </Suspense>
                     </div>
-                    {/*<Carousel id="myCarousel">
-                        
-                        <Carousel.Item>
-                            <Link to="/About">
-                                <img
-                                className="d-block w-100"
-                                src={require("./img/Charolette.jpg")}
-                                alt="First slide"
-                                />
-                            </Link>
-                            <Carousel.Caption className="carousel-caption">
-                                <h3>Charolette (F1 Pyredoodle)</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        
-                        <Carousel.Item>
-                            <Link to="/About">
-                                <img
-                                className="d-block w-100"
-                                src={require("./img/Finn.JPG")}
-                                alt="Second slide"
-                                />
-                            </Link>
-                            <Carousel.Caption className="carousel-caption">
-                                <h3>Finn (Standard Poodle)</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-
-                        <Carousel.Item>
-                            <Link to="/About">
-                                <img
-                                className="d-block w-100"
-                                src={require("./img/Brody.jpg")}
-                                alt="Third slide"
-                                />
-                            </Link>
-                            <Carousel.Caption className="carousel-caption">
-                                <h3>Brody (Standard Poodle)</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-
-                        <Carousel.Item>
-                            <Link to="/About">
-                                <img
-                                className="d-block w-100"
-                                src={require("./img/Abra.jpg")}
-                                alt="Fourth slide"
-                                />
-                            </Link>
-                            <Carousel.Caption className="carousel-caption">
-                                <h3>Abra (Old English Sheep Dog)</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-
-                        <Carousel.Item>
-                            <Link to="/About">
-                                <img
-                                className="d-block w-100"
-                                src={require("./img/Dixie.jpg")} 
-                                alt="Fifth slide"
-                                />
-                            </Link>
-                            <Carousel.Caption className="carousel-caption">
-                                <h3>Dixie (Standard Poodle)</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-
-                        <Carousel.Item>
-                            <Link to="/About">
-                                <img
-                                className="d-block w-100"
-                                src={require("./img/Henny.jpg")} 
-                                alt="Sixth slide"
-                                />
-                            </Link>
-                            <Carousel.Caption className="carousel-caption">
-                                <h3>Henny (Cavapoo)</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-
-                        <Carousel.Item>
-                            <Link to="/About">
-                                <img
-                                className="d-block w-100"
-                                src={require("./img/Pebbles.jpg")}
-                                alt="Seventh slide"
-                                />
-                            </Link>
-                            <Carousel.Caption className="carousel-caption">
-                                <h3>Pebbles (Cavapoo)</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-
-                        <Carousel.Item>
-                            <Link to="/About">
-                                <img
-                                className="d-block w-100"
-                                src={require("./img/Cloey.JPG")} 
-                                alt="Eigth slide"
-                                />
-                            </Link>
-                            <Carousel.Caption className="carousel-caption">
-                                <h3>Cloey (Minature Poodle)</h3>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    
-                    </Carousel>*/}
+                
                             
 
                           
